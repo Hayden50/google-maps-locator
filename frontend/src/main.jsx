@@ -6,7 +6,7 @@ import Login from './Login'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Login />
-    {/* <App /> */}
+    {/* <Login /> */}
+    <App />
   </React.StrictMode>
 )

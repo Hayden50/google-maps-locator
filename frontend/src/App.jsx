@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 
 const App = () => {  
 
   const [word, setWord] = useState('');
 
-  fetch('http://localhost:8080/api/data')
-    .then(response => response.toString())
+  fetch('/api/hello')
+    .then(response => response.text())
     .then(data => setWord(data));
 
   return (

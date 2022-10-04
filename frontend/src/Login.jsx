@@ -3,7 +3,7 @@ import './Login.css';
 const Login = () => {
     return (
         <div className="fullLogin">
-            <p>Login Screen</p>
+            <p className='title'>Google Maps Locator: Login</p>
             <div className="forms">
                 <form>
                 <label>
