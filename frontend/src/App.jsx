@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import './App.css'
+import LocationSelector from '../components/LocationSelector';
 
 const App = () => {  
 
   const [word, setWord] = useState('');
 
-  fetch('/api/hello')
-    .then(response => response.text())
-    .then(data => setWord(data));
-
   return (
     <div className="App">
-      <p>{word}</p>
+      <LocationSelector setWordOnSubmit={setWord}/>
+      <p>{word === '' ? 'Select a Latitude and Longitude' : word}</p>
     </div>
   )
 }
