@@ -18,7 +18,6 @@ const LocationSelector = ({setWordOnSubmit}) => {
                         longitude: values.longitude
                     }).then(res => {
                         setWordOnSubmit(res.data);
-                        console.log(`response: ${res}`);
                     });
                 }}
             >
