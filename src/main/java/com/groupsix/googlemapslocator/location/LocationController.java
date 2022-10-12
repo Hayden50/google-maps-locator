@@ -38,6 +38,10 @@ public class LocationController {
         JsonNode results = json.get("results");
         for (int i = 0; i < max; i++) {
             list.add(results.get(i).get("name").asText());
+            String locLat = results.get(i).get("geometry").get("location").get("lat").asText().substring(0, 5);
+            String locLong = results.get(i).get("geometry").get("location").get("lng").asText().substring(0, 5);
+            list.add(distance(latitude, longitude, locLat, locLong));
+            list.add("--");
         }
 
         return list;
@@ -46,5 +50,25 @@ public class LocationController {
     public static JsonNode get(URL url) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readTree(url);
+    }
+
+    public static String distance(String startLat, String startLong, String endLat, String endLong) {
+
+        double lat1 = Math.toRadians(Double.parseDouble(startLat));
+        double lon1 = Math.toRadians(Double.parseDouble(startLong));
+        double lat2 = Math.toRadians(Double.parseDouble(endLat));
+        double lon2 = Math.toRadians(Double.parseDouble(endLong));
+
+        // Haversine formula
+        double dlon = lon2 - lon1;
+        double dlat = lat2 - lat1;
+        double a = Math.pow(Math.sin(dlat / 2), 2)
+                + Math.cos(lat1) * Math.cos(lat2)
+                        * Math.pow(Math.sin(dlon / 2), 2);
+
+        double c = 2 * Math.asin(Math.sqrt(a));
+        double r = 6371;
+
+        return String.valueOf(c * r);
     }
 }
