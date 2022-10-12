@@ -2,14 +2,16 @@ import { useState } from 'react';
 import './App.css'
 import LocationSelector from '../components/LocationSelector';
 
-const App = () => {  
+const App = () => {
 
-  const [word, setWord] = useState('');
+  const [locations, setLocations] = useState([]);
 
   return (
     <div className="App">
-      <LocationSelector setWordOnSubmit={setWord}/>
-      <p>{word === '' ? 'Select a Latitude and Longitude' : word}</p>
+      <LocationSelector setWordOnSubmit={setLocations}/>
+      <div>
+        {locations.map((value, index) => <li key={index}>{value}</li>)}
+      </div>
     </div>
   )
 }
