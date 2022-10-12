@@ -18,8 +18,8 @@ const LocationSelector = ({setWordOnSubmit}) => {
                         longitude: values.longitude
                     }).then(res => {
                         setWordOnSubmit(res.data);
-                        console.log(`response: ${res}`);
-                    });
+                        console.log(`response: ${res.data}`);
+                    }).catch(err => console.log(err));
                 }}
             >
                 <Form>

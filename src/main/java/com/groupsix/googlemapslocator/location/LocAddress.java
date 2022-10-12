@@ -1,11 +1,11 @@
 package com.groupsix.googlemapslocator.location;
 
-public class Location {
+public class LocAddress {
 
         private String latitude;
         private String longitude;
 
-        public Location(String lat, String lon) {
+        public LocAddress(String lat, String lon) {
                 latitude = lat;
                 longitude = lon;
         }
