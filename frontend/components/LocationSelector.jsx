@@ -1,31 +1,48 @@
 import {Formik, Field, Form} from 'formik';
 import axios from 'axios';
+import './LocationSelector.css'
 
-const LocationSelector = ({setWordOnSubmit}) => {
+const LocationSelector = ({setWordOnSubmit, setLatitude, setLongitude, setLocObjArr}) => {
 
     return (
-        <div>
-            <p>Location Selector</p>
+        <div className='body'>
             <Formik 
                 initialValues={{
                     latitude: '',
                     longitude: '',
+                    radius: ''
                 }}
                 onSubmit={values => {
                     console.log(values);
                     axios.post('/api/locations', {
                         latitude: values.latitude,
-                        longitude: values.longitude
+                        longitude: values.longitude,
+                        radius: values.radius
                     }).then(res => {
                         setWordOnSubmit(res.data);
-                        console.log(`response: ${res}`);
-                    });
+                        setLatitude(values.latitude);
+                        setLongitude(values.longitude);
+                        let i = 0; 
+                        let objArr = [];
+                        while (i < res.data.length) {
+                            let newObj = {
+                                name: res.data[i],
+                                place: res.data[i + 1],
+                                dist: res.data[i + 2]
+                            }
+                            i += 4;
+                            objArr.push(newObj);
+                        }
+                        setLocObjArr(objArr);
+                    })
+                      .catch(err => console.log(err));
                 }}
             >
-                <Form>
-                    <Field id="latitude" name="latitude" placeholder="Latitude" />
-                    <Field id="longitude" name="longitude" placeholder="Longitude" />
-                    <button type="submit">Submit</button>
+                <Form className='fullForm'>
+                    <Field id="latitude" name="latitude" placeholder="Latitude (-180, 180)" className="fieldBox" />
+                    <Field id="longitude" name="longitude" placeholder="Longitude (-180, 180)" className="fieldBox" />
+                    <Field id="radius" name="radius" placeholder="Search Radius" className="fieldBox" />
+                    <button type="submit" className='submitButton'>Submit</button>
                 </Form>
             </Formik>
         </div>
