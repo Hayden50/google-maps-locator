@@ -1,8 +1,34 @@
 ## Overview
+In this project, utilized the Google Cloud Application Programming Interface (API)
+to provide users with the closest nearby locations of interest given an input latitude and longitude and search radius.
+Within the web-app, there is an authentication service with account creation and login
+as well as a map visual for the user. This was done using a React frontend and a SpringBoot (SB) backend. 
+
+## Problem Statement
+Tourists need an effective way to find points of interest (Hotels, Entertainment, Restaurants, etc.) in the places they travel to.
+We need to create software that makes these places easy to find near a given location.  
+
+## Technologies
+Front-end​
+    -JavaScript using the React framework​
+    -HTML​
+    -CSS  ​
+Backend​
+    -Java using Spring Boot ​
+    -OAuth 2.0 Authorization with Google Cloud Store Data base ​
+    -Maven​
+    -Google Maps API, Google Places API ​
+VCS​
+    -Git and GitHub​
+Deployment​
+    -Google Cloud Platform​
+​
+
+
 
 ## Installation and Setup -- FOR DEVELOPMENT
 
--- Make sure that Maven and NodeJS are instakked before continuing
+-- Make sure that Maven and NodeJS are installed before continuing
 
 1. Create local git repo and pull files
 2. cd into frontend folder and run "npm install" in your terminal (this will install all dependencies)
