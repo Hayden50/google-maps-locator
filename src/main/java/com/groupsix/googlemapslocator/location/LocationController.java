@@ -87,8 +87,8 @@ public class LocationController {
                 list.add(typeOfLoc);
             }
 
-            String locLat = results.get(i).get("geometry").get("location").get("lat").asText().substring(0, 5);
-            String locLong = results.get(i).get("geometry").get("location").get("lng").asText().substring(0, 5);
+            String locLat = results.get(i).get("geometry").get("location").get("lat").asText();
+            String locLong = results.get(i).get("geometry").get("location").get("lng").asText();
             String dist = distance(latitude, longitude, locLat, locLong);
             list.add(dist.substring(0, 5) + " Miles Away");
             list.add("--");
