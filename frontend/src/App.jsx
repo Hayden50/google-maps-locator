@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import LocationSelector from '../components/LocationSelector';
+import Login from '../components/Login';
 
 const App = () => {  
 
@@ -8,7 +9,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <LocationSelector setWordOnSubmit={setWord}/>
+      {/* <LocationSelector setWordOnSubmit={setWord}/> */}
+      <Login />
       <p>{word === '' ? 'Select a Latitude and Longitude' : word}</p>
     </div>
   )

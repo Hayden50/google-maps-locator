@@ -1,7 +1,7 @@
 import {Formik, Field, Form} from 'formik';
 import axios from 'axios';
 
-const Login = ({setWordOnSubmit}) => {
+const Login = () => {
 
     return (
         <div>
@@ -17,8 +17,9 @@ const Login = ({setWordOnSubmit}) => {
                         username: values.username,
                         password: values.password
                     }).then(res => {
-                        setWordOnSubmit(res.data);
-                        console.log(`response: ${res}`);
+                        console.log(`response: ${res.data}`);
+                        // if (res == "Success") 
+                        //Route
                     });
                 }}
             >
