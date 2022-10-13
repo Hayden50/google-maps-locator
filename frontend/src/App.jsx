@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/App.css'
 import LocationSelector from '../components/LocationSelector';
+import {Link} from 'react-router-dom';
 
 const App = () => {
 
@@ -23,7 +24,7 @@ const App = () => {
   return (
     <>
     <div className='logoutButtonBody'>
-      <button className='logoutButton'>Logout</button>
+      <button className='logoutButton'><Link style={{textDecoration: 'none'}} to="/">Logout</Link></button>
     </div>
     <div className="App">
         <div className='selectorTable'>
