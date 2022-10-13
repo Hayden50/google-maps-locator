@@ -1,7 +1,7 @@
 import {Formik, Field, Form} from 'formik';
 import axios from 'axios';
 
-const LocationSelector = ({setWordOnSubmit}) => {
+const LocationSelector = ({setWordOnSubmit, setLatitude, setLongitude}) => {
 
     return (
         <div>
@@ -18,7 +18,11 @@ const LocationSelector = ({setWordOnSubmit}) => {
                         latitude: values.latitude,
                         longitude: values.longitude,
                         radius: values.radius
-                    }).then(res => setWordOnSubmit(res.data))
+                    }).then(res => {
+                        setWordOnSubmit(res.data);
+                        setLatitude(values.latitude);
+                        setLongitude(values.longitude);
+                    })
                       .catch(err => console.log(err));
                 }}
             >
