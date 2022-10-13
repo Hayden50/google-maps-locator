@@ -6,7 +6,7 @@ import StartPage from './Start page'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StartPage />
-    {/* <App /> */}
+    {/* <StartPage /> */}
+    <App />
   </React.StrictMode>
 )

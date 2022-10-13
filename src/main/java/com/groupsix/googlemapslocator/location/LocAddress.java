@@ -1,13 +1,15 @@
 package com.groupsix.googlemapslocator.location;
 
-public class Location {
+public class LocAddress {
 
         private String latitude;
         private String longitude;
+        private String radius;
 
-        public Location(String lat, String lon) {
+        public LocAddress(String lat, String lon, String rang) {
                 latitude = lat;
                 longitude = lon;
+                radius = rang;
         }
 
         public void setLatitude(String lat) {
@@ -24,6 +26,14 @@ public class Location {
 
         public String getLongitude() {
                 return longitude;
+        }
+
+        public String getRadius() {
+                return this.radius;
+        }
+
+        public void setRadius(String radius) {
+                this.radius = radius;
         }
 
 }
