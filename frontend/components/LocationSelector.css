@@ -1,0 +1,20 @@
+.fieldBox {
+  height: 55px;
+  width: 600px;
+  font-style: italic;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 1px;
+  margin-bottom: 15px;
+}
+
+.submitButton {
+  width: 600px;
+  height: 55px;
+  border-wdth: 0;
+  border-radius: 10px;
+  background-color: #0492c2;
+  margin-bottom: 40px;
+  font-style: italic;
+  font-color: white;
+}
