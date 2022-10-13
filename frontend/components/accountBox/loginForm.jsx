@@ -11,6 +11,7 @@ import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 import {useRef} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,7 +41,7 @@ export function LoginForm(props) {
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton type="submit" onClick={handleClick}>Login</SubmitButton>
+      <SubmitButton type="submit" onClick={handleClick}><Link style={{color: 'white'}} to='/landing'>Log In</Link></SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Don't have an accoun?{" "}
