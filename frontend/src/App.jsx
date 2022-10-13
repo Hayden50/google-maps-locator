@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/App.css'
 import LocationSelector from '../components/LocationSelector';
+import Login from '../components/Login';
 
 const App = () => {
 
@@ -21,9 +22,6 @@ const App = () => {
   }
 
   return (
-    <>
-    <div className='logoutButtonBody'>
-      <button className='logoutButton'>Logout</button>
     </div>
     <div className="App">
         <div className='selectorTable'>
