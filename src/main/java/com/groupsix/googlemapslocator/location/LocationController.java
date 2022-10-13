@@ -16,7 +16,7 @@ public class LocationController {
 
     private String apiKey = "AIzaSyBjZXpz2X3e0KhnzBK8Av7IDnbwfm0ZowU";
 
-    public static final Map<String, String> staticMap = new HashMap<>();
+    private static final Map<String, String> staticMap = new HashMap<>();
 
     static {
         staticMap.put("point_of_interest", "Point of Interest");

@@ -2,7 +2,7 @@ import {Formik, Field, Form} from 'formik';
 import axios from 'axios';
 import './LocationSelector.css'
 
-const LocationSelector = ({setWordOnSubmit, setLatitude, setLongitude, setTest}) => {
+const LocationSelector = ({setWordOnSubmit, setLatitude, setLongitude, setLocObjArr}) => {
 
     return (
         <div className='body'>
@@ -33,8 +33,7 @@ const LocationSelector = ({setWordOnSubmit, setLatitude, setLongitude, setTest})
                             i += 4;
                             objArr.push(newObj);
                         }
-                        console.log(objArr);
-                        setTest(objArr);
+                        setLocObjArr(objArr);
                     })
                       .catch(err => console.log(err));
                 }}
