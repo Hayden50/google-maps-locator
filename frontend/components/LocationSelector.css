@@ -1,6 +1,6 @@
 .fieldBox {
   height: 55px;
-  width: 600px;
+  width: 700px;
   font-style: italic;
   border-radius: 5px;
   border-color: black;
@@ -9,7 +9,7 @@
 }
 
 .submitButton {
-  width: 600px;
+  width: 700px;
   height: 55px;
   border-wdth: 0;
   border-radius: 10px;
